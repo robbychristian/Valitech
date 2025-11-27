@@ -71731,18 +71731,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cards_DashboardCards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../cards/DashboardCards */ "./resources/js/cards/DashboardCards.js");
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/chart.js");
 /* harmony import */ var chart_js_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! chart.js/helpers */ "./node_modules/chart.js/helpers/helpers.js");
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/dist/index.js");
 /* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
 /* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableContainer/TableContainer.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Table/Table.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableHead/TableHead.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableRow/TableRow.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableCell/TableCell.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableBody/TableBody.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Rating/Rating.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableContainer/TableContainer.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Table/Table.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableHead/TableHead.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableRow/TableRow.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableCell/TableCell.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TableBody/TableBody.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _config_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config/api */ "./resources/js/config/api.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -71769,59 +71767,103 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 chart_js__WEBPACK_IMPORTED_MODULE_7__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_7__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.PointElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.LineElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.Title, chart_js__WEBPACK_IMPORTED_MODULE_7__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_7__.Legend);
 var Dashboard = function Dashboard(props) {
   var userObject = JSON.parse(props.user);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
-    dashboardData = _useState2[0],
-    setDashboardData = _useState2[1];
+    students = _useState2[0],
+    setStudents = _useState2[1];
+  var getYearLevel = function getYearLevel(yearLevel) {
+    if (yearLevel == 1) {
+      return "1st Year";
+    } else if (yearLevel == 2) {
+      return "2nd Year";
+    } else if (yearLevel == 3) {
+      return "3rd Year";
+    } else {
+      return "4th Year";
+    }
+  };
+  var getSemester = function getSemester(semester) {
+    if (semester == 1) {
+      return "1st Semester";
+    } else {
+      return "2nd Semester";
+    }
+  };
+  var getNextSubjects = function getNextSubjects() {
+    var yearLevel = Number(userObject.year_level);
+    var semester = Number(userObject.semester);
+    if (semester == 2) {
+      yearLevel += 1;
+    } else {
+      semester += 1;
+    }
+    var nextSubjects = "".concat(getYearLevel(yearLevel), " - ").concat(getSemester(semester));
+    return nextSubjects;
+  };
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState4 = _slicedToArray(_useState3, 2),
-    productsData = _useState4[0],
-    setProductsData = _useState4[1];
+    dashboardData = _useState4[0],
+    setDashboardData = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState6 = _slicedToArray(_useState5, 2),
-    monthlyLabel = _useState6[0],
-    setMonthlyLabel = _useState6[1];
+    productsData = _useState6[0],
+    setProductsData = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState8 = _slicedToArray(_useState7, 2),
-    monthlyData = _useState8[0],
-    setMonthlyData = _useState8[1];
+    monthlyLabel = _useState8[0],
+    setMonthlyLabel = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState10 = _slicedToArray(_useState9, 2),
-    salesReports = _useState10[0],
-    setSalesReports = _useState10[1];
+    monthlyData = _useState10[0],
+    setMonthlyData = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState12 = _slicedToArray(_useState11, 2),
-    salesData = _useState12[0],
-    setSalesData = _useState12[1];
+    subjects = _useState12[0],
+    setSubjects = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState14 = _slicedToArray(_useState13, 2),
-    salesLabel = _useState14[0],
-    setSalesLabel = _useState14[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (userObject.user_role == 3 && userObject.profile == null) {
-      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-        icon: "warning",
-        title: "Redirecting...",
-        text: "You will be redirected to complete your profile!"
-      }).then(function (response) {
-        location.replace("/customerpoll");
-      });
-    } else if (userObject.user_role == 3) {
-      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-        icon: "warning",
-        title: "Redirecting...",
-        text: "You will be redirected for shopping!"
-      }).then(function (response) {
-        location.replace("/shopping");
-      });
-    } else {
-      console.log("not customer :D");
-      console.log(userObject.profile == null);
-    }
-  }, []);
+    nextSubjects = _useState14[0],
+    setNextSubject = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState16 = _slicedToArray(_useState15, 2),
+    salesReports = _useState16[0],
+    setSalesReports = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState18 = _slicedToArray(_useState17, 2),
+    salesData = _useState18[0],
+    setSalesData = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState20 = _slicedToArray(_useState19, 2),
+    salesLabel = _useState20[0],
+    setSalesLabel = _useState20[1];
+
+  // useEffect(() => {
+  //     if (userObject.user_role == 3 && userObject.profile == null) {
+  //         swal({
+  //             icon: "warning",
+  //             title: "Redirecting...",
+  //             text: "You will be redirected to complete your profile!",
+  //         }).then((response) => {
+  //             location.replace("/customerpoll");
+  //         });
+  //     } else if (userObject.user_role == 3) {
+  //         swal({
+  //             icon: "warning",
+  //             title: "Redirecting...",
+  //             text: "You will be redirected for shopping!",
+  //         }).then((response) => {
+  //             location.replace("/shopping");
+  //         });
+  //     } else {
+  //         console.log("not customer :D");
+  //         console.log(userObject.profile == null);
+  //     }
+  // }, []);
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     _config_api__WEBPACK_IMPORTED_MODULE_5__.api.get("/dashboard").then(function (response) {
       console.log(response.data.monthlyVisitor);
@@ -71844,7 +71886,7 @@ var Dashboard = function Dashboard(props) {
     })["catch"](function (err) {
       console.log(err.response);
     });
-    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.get('reportsmanagement/getsalesreports').then(function (response) {
+    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.get("reportsmanagement/getsalesreports").then(function (response) {
       console.log(response.data.monthly);
       var monthly = response.data.monthly;
       var data = [];
@@ -71858,7 +71900,39 @@ var Dashboard = function Dashboard(props) {
     })["catch"](function (err) {
       console.log(err.response);
     });
+    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.post("getusersubjects", {
+      semester: userObject.semester,
+      year_level: userObject.year_level
+    }).then(function (response) {
+      setSubjects(response.data);
+    })["catch"](function (err) {
+      console.log(err.response);
+    });
+    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.post("getnextsubjects", {
+      semester: userObject.semester,
+      year_level: userObject.year_level
+    }).then(function (response) {
+      setNextSubject(response.data);
+    })["catch"](function (err) {
+      console.log(err.response);
+    });
+    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.get("getallstudents").then(function (response) {
+      console.log("students");
+      console.log(response.data);
+      setStudents(response.data);
+    })["catch"](function (err) {
+      console.log(err.response);
+    });
   }, []);
+  var passStudent = function passStudent(id) {
+    _config_api__WEBPACK_IMPORTED_MODULE_5__.api.post('passStudent', {
+      id: id
+    }).then(function (response) {
+      location.reload();
+    })["catch"](function (err) {
+      console.log(err.response);
+    });
+  };
   var salesOptions = {
     plugins: {
       legend: {
@@ -71877,7 +71951,7 @@ var Dashboard = function Dashboard(props) {
       data: salesData,
       fill: false,
       borderColor: "rgb(75, 192, 192)",
-      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(201, 203, 207, 0.2)']
+      backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"]
     }]
   };
   var data = {
@@ -71902,138 +71976,126 @@ var Dashboard = function Dashboard(props) {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "w-full",
-    children: userObject.user_role == 3 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: userObject.user_role == 3 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+      children: userObject.year_level == 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "grid grid-cols-1 gap-5",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "col-span-1 px-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "text-3xl font-bold",
+            children: ["Current Semester (", getYearLevel(userObject.year_level), " -", " ", getSemester(userObject.semester), ")"]
+          }), subjects.length > 0 && subjects.map(function (item, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "grid grid-cols-5",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-span-1 font-bold text-base",
+                children: item.subject_code
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-span-1 text-base",
+                children: item.subject_name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Lec Units -", " ", item.subject_lec_units]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Lab Units -", " ", item.subject_lab_units]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Pre-requisite -", " ", item.subject_prereq]
+              })]
+            }, index);
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "col-span-1 px-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "text-3xl font-bold",
+            children: ["Next Semester (", getNextSubjects(), ")"]
+          }), nextSubjects.length > 0 && nextSubjects.map(function (item, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "grid grid-cols-5",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-span-1 font-bold text-base",
+                children: item.subject_code
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-span-1 text-base",
+                children: item.subject_name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Lec Units -", " ", item.subject_lec_units]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Lab Units -", " ", item.subject_lab_units]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-span-1 text-base",
+                children: ["Pre-requisite -", " ", item.subject_prereq]
+              })]
+            }, index);
+          })]
+        })]
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "flex justify-center items-center w-full",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        variant: "h4",
-        children: "Redirecting..."
-      })
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "grid grid-cols-1 lg:grid-cols-2 gap-x-44 gap-y-20",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "col-span-1",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          className: "grid grid-cols-2 gap-4 justify-center items-center h-full",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_cards_DashboardCards__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              title: "Total Products",
-              bgColor: "bg-yellow-400",
-              textColor: "text-white",
-              count: dashboardData.product_counts
+        component: _mui_material__WEBPACK_IMPORTED_MODULE_9__["default"],
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          sx: {
+            minWidth: 650
+          },
+          "aria-label": "simple table",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                children: "Student Name"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                align: "right",
+                children: "Year Level"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                align: "right",
+                children: "Semester"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                align: "right",
+                children: "Email"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                align: "right",
+                children: "Action"
+              })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_cards_DashboardCards__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              title: "Total Revenue",
-              bgColor: "bg-lime-700",
-              textColor: "text-white",
-              count: "P ".concat(dashboardData.total_revenue)
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_cards_DashboardCards__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              title: "Total Customer",
-              bgColor: "bg-red-600",
-              textColor: "text-white",
-              count: dashboardData.total_customer
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_cards_DashboardCards__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              title: "Total Orders",
-              bgColor: "bg-blue-700",
-              textColor: "text-white",
-              count: dashboardData.total_orders
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            children: students.length > 0 && students.map(function (row) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                sx: {
+                  "&:last-child td, &:last-child th": {
+                    border: 0
+                  }
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  component: "th",
+                  scope: "row",
+                  children: row.name
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  align: "right",
+                  children: row.year_level
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  align: "right",
+                  children: row.semester
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  align: "right",
+                  children: row.email
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  align: "right",
+                  children: !(row.year_level == 4 && row.semester == 2) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                    variant: "contained",
+                    onClick: function onClick() {
+                      return passStudent(row.id);
+                    },
+                    children: "Pass"
+                  })
+                })]
+              }, row.name);
             })
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "col-span-1 h-72 border flex justify-center items-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Line, {
-          options: options,
-          data: data
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "col-span-1",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Bar, {
-          options: salesOptions,
-          data: salesDatas
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "col-span-1",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          variant: "h5",
-          fontWeight: 700,
-          children: "Top Products"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          component: _mui_material__WEBPACK_IMPORTED_MODULE_11__["default"],
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            sx: {
-              minWidth: 650
-            },
-            "aria-label": "caption table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                  children: "Products"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                  children: "Sales"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                  children: "Rating"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                  children: "Stocks"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"], {
-              children: productsData.map(function (item, index) {
-                if (index < 3) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                      component: "th",
-                      scope: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-                        className: "grid grid-cols-12 gap-4",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                          className: "col-span-3",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                            src: "https://bubblenfizz-store.com/images/static/image282.png",
-                            height: 100,
-                            width: 100
-                          })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                          className: "col-span-9",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                            variant: "h6",
-                            children: item.product_details.product_name
-                          })
-                        })]
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                        variant: "h6",
-                        children: item.product_sales
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                        name: "read-only",
-                        value: Number(item.product_rating),
-                        precision: 0.1,
-                        readOnly: true
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                        variant: "h6",
-                        children: item.product_details.product_stock
-                      })
-                    })]
-                  }, index);
-                }
-              })
-            })]
-          })
-        })]
-      })]
+      })
     })
   });
 };

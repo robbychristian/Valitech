@@ -22,6 +22,29 @@ class UserManagementController extends Controller
         return User::where('user_role', 3)->with('profile')->get();
     }
 
+    public function getAllStudents()
+    {
+        return User::where('user_role', 3)->get();
+    }
+
+    public function passStudent(Request $request)
+    {
+        $user = User::where('id', $request->id)->first();
+        $year_level = (int)$user->year_level;
+        $semester = (int)$user->semester;
+
+        if($semester == 2) {
+            $year_level += 1;
+            $semester = 1;
+        } else {
+            $semester += 1;
+        }
+        User::where('id', $request->id)->update([
+            'year_level' => $year_level,
+            'semester' => $semester
+        ]);
+    }
+
     public function addEmployee(Request $request)
     {
         // $validator = Validator::make($request->all(), [

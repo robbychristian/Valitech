@@ -90,6 +90,15 @@
             border: none;
             outline: none;
         }
+        select {
+            background: #eee;
+            padding: 12px 15px;
+            margin: 8px 15px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
         a {
             color: #333;
             font-size: 14px;
@@ -220,6 +229,16 @@
                 @error('password_confirmation')
                     <h1 style="font-size: 10px; color: rgb(239 68 68);">{{ $message }}</h1>
                 @enderror
+                <select name="year_level">
+                    <option value="1">1st year</option>
+                    <option value="2">2nd year</option>
+                    <option value="3">3rd year</option>
+                    <option value="4">4th year</option>
+                </select>
+                <select name="semester">
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                </select>
                 <a href="#">Forgot your password?</a>
                 <button type="submit">Sign Up</button>
             </form>
@@ -249,8 +268,8 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
+                    <h1>Register Now!</h1>
+                    <p>To access your student information</p>
                     <button id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-right">

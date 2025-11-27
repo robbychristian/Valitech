@@ -35,7 +35,7 @@
         <div class="flex min-h-screen flex-row bg-gray-100 text-white">
             @auth
 
-                @if (Auth::user()->user_role != 3)
+                @if (Auth::user()->user_role == 2)
                     <aside id="sidebar"
                         class="sidebar w-60 -translate-x-full transform bg-black py-4 transition-transform duration-150 ease-in md:translate-x-0 md:shadow-md">
                         <div class="my-4 w-full border-b-2 border-indigo-100 text-center pb-5">

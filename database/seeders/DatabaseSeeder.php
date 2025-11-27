@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\ProductCategory;
 use App\Models\Products;
 use App\Models\ProductScent;
+use App\Models\Subjects;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -22,9 +23,826 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin',
-            'email' => "admin@bubblenfizz.com",
+            'email' => "admin@valitech.com",
             'password' => Hash::make("admin"),
             'user_role' => 1
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Purposive Communication',
+            'subject_code' => 'ENG 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Understanding the Self',
+            'subject_code' => 'PER DEV 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Character Formation I',
+            'subject_code' => 'C.F. 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Mathematics in the Modern World',
+            'subject_code' => 'MATH 101',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        //
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'The Entrepreneurial Mind',
+            'subject_code' => 'ENTREP 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Readings in Philippine History',
+            'subject_code' => 'HISTORY 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Micro Perspective of Tourism and Hospitality',
+            'subject_code' => 'TM 611',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Movement Competency Training',
+            'subject_code' => 'PATHFIT 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 1,
+            'subject_name' => 'Civic Welfare Training Service 1',
+            'subject_code' => 'NSTP 1/ROTC1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        // 1st yr SECOND SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Technical Communication',
+            'subject_code' => 'ENG 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ENG 1',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Ethics',
+            'subject_code' => 'PER DEV 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'PERDEV 1',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Character Formation 2',
+            'subject_code' => 'C.F. 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Living in the I.T. Era',
+            'subject_code' => 'I.T. 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Risk Management as Applied to Safety, Security and Sanitation',
+            'subject_code' => 'TM 621',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 611',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Strategic Management & Total Quality Management',
+            'subject_code' => 'MGT 130',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Macro Perspective of Tourism and Hospitality',
+            'subject_code' => 'TM 622',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 611',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Exercise-based Fitness Activities',
+            'subject_code' => 'PATHFIT 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'PATHFIT 1',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 1,
+            'subject_semester' => 2,
+            'subject_name' => 'Civic Welfare Training Service 2',
+            'subject_code' => 'NSTP 2/ROTC2',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'NSTP 1/ROTC 1',
+        ]);
+
+        // 2nd yr FIRST SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Tourism English',
+            'subject_code' => 'ENG 3',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ENG 2',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Character Formation 3',
+            'subject_code' => 'C.F. 3',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'C.F. 2',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Life and Works of Dr. Jose Rizal',
+            'subject_code' => 'RIZAL 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Quality Service Management in Tourism and Hospitality',
+            'subject_code' => 'TM 631',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 621, TM 611',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Legal Aspects in Tourism and Hospitality',
+            'subject_code' => 'TM 632',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 611, TM 621',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Survival and Rescue Training',
+            'subject_code' => 'SRT',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => '***Foreign Language 1',
+            'subject_code' => 'TM 633',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => '*Eco-Tourism Management',
+            'subject_code' => 'TM ELECT 634',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'PATHFIT 1',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => '**Dangerous Goods',
+            'subject_code' => 'AVIATION 108',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 1,
+            'subject_name' => 'Dance',
+            'subject_code' => 'PATHFIT 3',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'PATHFIT 1&2',
+        ]);
+
+        // 2ND YEAR SECOND SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Character Formation 4',
+            'subject_code' => 'C.F. 4',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Professional Development and Applied Ethics',
+            'subject_code' => 'TM 641',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 631',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Applied Business Tools & Technologies in Tourism',
+            'subject_code' => 'TM 631',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'TM 611, TM 621',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Philippine Culture and Tourism Geography Multicultural Diversity in Workplace for the Tourism Professionals',
+            'subject_code' => 'TM 644',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 611, TM 621',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Professionals',
+            'subject_code' => 'TM 644',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 611, TM 621',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => '***Foreign Language 2',
+            'subject_code' => 'TM 645',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 634',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => '*Recreational and Leisure Management',
+            'subject_code' => 'TM ELECT 646',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM ELECT 634',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => '** Air Transportation',
+            'subject_code' => 'AVIATION 109',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'AVIATION 108',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 2,
+            'subject_semester' => 2,
+            'subject_name' => 'Sports',
+            'subject_code' => 'PATHFIT 4',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'PATHFIT 1&2',
+        ]);
+        
+        // 3ND YEAR FIRST SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Art Appreciation',
+            'subject_code' => 'HUM 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Character Formation 5',
+            'subject_code' => 'C.F. 5',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'The Contemporary World',
+            'subject_code' => 'SOC SCI 10',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Operations Management',
+            'subject_code' => 'MGT 131',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'MGT 130',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Tourism and Hospitality Marketing',
+            'subject_code' => 'TM 651',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 641',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Global Culture and Tourism Geography',
+            'subject_code' => 'TM 653',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 641',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Sustainable Tourism',
+            'subject_code' => 'TM 653',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 641',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => 'Travel and Tour Management',
+            'subject_code' => 'TM 655',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 643',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => '*Tour Guiding',
+            'subject_code' => 'TM ELECT 656',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM ELECT 646, TM 643',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 1,
+            'subject_name' => '**Aviation Legislations (PCAR and CAB)',
+            'subject_code' => 'F.A. Elective 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+
+        // 3ND YEAR SECOND SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Science, Technology, and Society',
+            'subject_code' => 'STS',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Character Formation 6',
+            'subject_code' => 'C.F. 6',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Life & Works of Carlos Bulosan',
+            'subject_code' => 'LIT 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Transportation Management',
+            'subject_code' => 'TM 661',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 655',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Tourism Policy Planning and Development',
+            'subject_code' => 'TM 662',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 654',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Introduction to Meetings Incentives, Conferences and Events Management (MICE)',
+            'subject_code' => 'TM 663',
+            'subject_price' => 0,
+            'subject_lec_units' => 2,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 621, TM 641, TM 642',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Entrepreneurship in Tourism and Hospitality',
+            'subject_code' => 'TM 664',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 642',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => '*Heritage Tourism',
+            'subject_code' => 'TM ELECT 665',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM ELECT 656',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => '**Low Cost and Legacy Air Carriers',
+            'subject_code' => 'F.A. ELECTIVE 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ELECTIVE 1',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 3,
+            'subject_semester' => 2,
+            'subject_name' => 'Thesis 1/Tourism Research 1',
+            'subject_code' => 'TM 600 A',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+
+        // 4TH YEAR FIRST SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => 'Character Formation 7',
+            'subject_code' => 'C.F. 7',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => 'Character Formation 8',
+            'subject_code' => 'C.F. 8',
+            'subject_price' => 0,
+            'subject_lec_units' => 1,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'None',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => '*Philippine Gastronomical Tourism',
+            'subject_code' => 'TM ELECT 672',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'TM 643',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => '*Agri-Tourism',
+            'subject_code' => 'TM ELECT 673',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 643',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => '**Airport Planning and Management',
+            'subject_code' => 'F.A. ELECTIVE 3',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ELECTIVE 1',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => '**Fiscal Aspects of Aviation',
+            'subject_code' => 'F.A. ELECTIVE 4',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ELECTIVE 1',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => '**Current Issues and Trends in Aviation',
+            'subject_code' => 'F.A. ELECTIVE 5',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'ELECTIVE 1',
+        ]);
+
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 1,
+            'subject_name' => 'Thesis 2/Tourism Research 2',
+            'subject_code' => 'TM 700 B',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 0,
+            'subject_prereq' => 'TM 200 A',
+        ]);
+        
+        // 4TH YEAR FIRST SEMESTER
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 2,
+            'subject_name' => '*Practicum / Internship (600 Hours)',
+            'subject_code' => 'TM 681',
+            'subject_price' => 0,
+            'subject_lec_units' => 0,
+            'subject_lab_units' => 6,
+            'subject_prereq' => 'All TM Professional Subjects',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 2,
+            'subject_name' => '**Cabin Crew Training 1',
+            'subject_code' => 'FA 1',
+            'subject_price' => 0,
+            'subject_lec_units' => 4,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'AVIATION 108',
+        ]);
+        
+        Subjects::create([
+            'course_id' => 1,
+            'subject_year' => 4,
+            'subject_semester' => 2,
+            'subject_name' => '**Cabin Crew Training 2',
+            'subject_code' => 'FA 2',
+            'subject_price' => 0,
+            'subject_lec_units' => 3,
+            'subject_lab_units' => 1,
+            'subject_prereq' => 'FA 1',
         ]);
 
         Products::create([

@@ -37,7 +37,7 @@
             <div class="flex justify-center items-center space-x-8 @guest
 py-6 @endguest">
                 @guest
-                    <a class="relative text-black font-semibold hover:text-amber-500" href="/shopping">Home</a>
+                    <a class="relative text-black font-semibold hover:text-amber-500" href="/home">Home</a>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Courses <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                       </svg></button>
@@ -46,28 +46,22 @@ py-6 @endguest">
                           <li>
                             <a href="/allproducts" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All Courses</a>
                           </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bachelor of Science</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bachelor of Arts</a>
-                          </li>
                         </ul>
                     </div>
                     <a class="relative text-black font-semibold hover:text-amber-500" href="/aboutus">About Us</a>
-                    <a class="relative text-black font-semibold hover:text-amber-500" href="#">Terms and Condition</a>
+                    <a class="relative text-black font-semibold hover:text-amber-500" href="/termsandconditions">Terms and Condition</a>
                 @endguest
                 @auth
                     @if (Auth::user()->user_role == 3)
-                        {{-- <a class="relative text-black font-semibold hover:text-amber-500" href="/shopping">Home</a>
+                        {{-- <a class="relative text-black font-semibold hover:text-amber-500" href="/home">Home</a>
                         <a class="relative text-black font-semibold hover:text-amber-500" href="/allproducts">All Products</a>
                         <a class="relative text-black font-semibold hover:text-amber-500" href="/bubblebath">Bubble Bath</a>
                         <a class="relative text-black font-semibold hover:text-amber-500" href="#">Artisan Facial N
                             Body</a>
                         <a class="relative text-black font-semibold hover:text-amber-500" href="#">Bath Salt</a>
                         <a class="relative text-black font-semibold hover:text-amber-500" href="#">Bath Bomb Sets</a> --}}
-                        <a class="relative text-black font-semibold hover:text-amber-500" href="/shopping">Home</a>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Products <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <a class="relative text-black font-semibold hover:text-amber-500" href="/home">Home</a>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">All Courses <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                       </svg></button>
                     <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
@@ -81,7 +75,7 @@ py-6 @endguest">
                         </ul>
                     </div>
                     <a class="relative text-black font-semibold hover:text-amber-500" href="/aboutus">About Us</a>
-                    <a class="relative text-black font-semibold hover:text-amber-500" href="#">Terms and Condition</a>
+                    <a class="relative text-black font-semibold hover:text-amber-500" href="/termsandconditions">Terms and Condition</a>
                     @endif
                 @endauth
             </div>

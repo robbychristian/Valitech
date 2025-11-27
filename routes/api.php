@@ -8,6 +8,7 @@ use App\Http\Controllers\Crud\ProductsController;
 use App\Http\Controllers\Crud\RecommendationController;
 use App\Http\Controllers\Crud\ReportsManagement;
 use App\Http\Controllers\Crud\ReviewController;
+use App\Http\Controllers\Crud\SubjectController;
 use App\Http\Controllers\Crud\UserManagementController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Auth::routes();
+
+Route::post("/getusersubjects", [SubjectController::class, 'getUserSubjects']);
+Route::post("/getnextsubjects", [SubjectController::class, 'getNextSubjects']);
+Route::get("/getallstudents", [UserManagementController::class, 'getAllStudents']);
+Route::post("/passStudent", [UserManagementController::class, 'passStudent']);
 
 Route::post("/mobilelogin", [AccountController::class, 'mobileLogin']);
 

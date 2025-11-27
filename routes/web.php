@@ -29,7 +29,11 @@ Route::get('/auth', function () {
 
 Route::get('/aboutus', function () {
     return view('aboutus');
-})->middleware(['guest']);
+});
+
+Route::get('/termsandconditions', function () {
+    return view('termsandconditions');
+});
 
 Auth::routes();
 
